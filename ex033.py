@@ -18,6 +18,4 @@ if b<a and b<c:
 if a<b and a<c:
     Menor = a
 
-    
-
 print(f'Maior número: {Maior} \n Menor número: {Menor}')
