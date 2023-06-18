@@ -1,27 +1,20 @@
-'''
-Refaça o DESAFIO 35 dos triângulos, acrescentando o recurso de mostrar que tipo de triângulo
-será formado:
-- EQUILÁTERO: Todos os lados iguais
-- ISÓSCELES: Dois lados iguais
-- ESCALENO: Todos os lados diferentes
-'''
-c = 0
+c = 1
 lista = []
 
-while c != 3:
-    lado = int(input(f'Digite o {c + 1}º lado: '))
+while c != 4:
+    lado = int(input('Digite o {c}º número: '))
     lista.append(lado)
     c += 1
 
-a = lista [0]
-b = lista[1]
-c = lista[2]
+a, b, c = lista[0], lista[1], lista[2]
 
 if a > b + c and b > a + c and c > a + b:
     print('FORMAM TRIÂNGULO')
     if a == b and b == c:
         print('TIPO DE TRIÂNGULO: EQUILÁTERO')
-    elif a == b or b == c and a != c:
+    elif (a == b and b != c) or (a == c and c != b) or (b == c and b != c):
         print('TIPO DE TRIÂNGULO: ISÓSCELES')
     else:
         print('TIPO DE TRIÂNGULO: ESCALENO')
+else:
+    print('NÃO FORMAM TRIÂNGULO')
