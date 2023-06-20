@@ -1,51 +1,20 @@
 '''
-Crie um programa que faça o computador jogar pedra, papel e tesoura com você
+Desenvolva um programa que leia o primeiros termo e a razão de uma PA. No final, mostre a soma
+dos 10 primeiros termos dessa progressão.
 '''
-from random import randint
-from time import sleep
 
-itens = ('PEDRA', 'PAPEL', 'TESOURA')
-winner_player = 'VITÓRIA DO JOGADOR'
-winner_cpu = 'VITÓRIA DO COMPUTADOR'
+a1 = int(input('Digite o 1º termo da P.A.: '))
+r = int(input('Digite a razão da P.A.: '))
+s10 = 0
+ac = 0
 
-#inicio
-print('''
-[0] PEDRA
-[1] PAPEL
-[2] TESOURA''')
-op_player = int(input('DIGITE SUA OPÇÃO:'))
+for c in range(1, 11):
+    ac = a1 + ((c - 1)*r)
+    s10 += ac
 
-print('VEZ DO COMPUTADOR')
-op_cpu = randint(0,2)
-print('PROCESSANDO...')
-sleep(1.5)
+s10 /= 2
 
-#processo
-if op_player == op_cpu:
-    msg_winner = 'EMPATE!'
-else:
-    if op_player == 0: #PEDRA
-        if op_cpu == 1: #PAPEL
-            msg_winner = winner_cpu
-        elif op_cpu == 2: #TESOURA
-            msg_winner = winner_player
+print(s10)
+
+
     
-    elif op_player == 1: #PAPEL
-        if op_cpu == 0: #PEDRA
-            msg_winner = winner_player
-        elif op_cpu == 2: #TESOURA
-            msg_winner = winner_cpu
-    
-    elif op_player == 2: #TESOURA
-        if op_cpu == 0: #PEDRA
-            msg_winner = winner_cpu
-        elif op_cpu == 1: #PAPEL
-            msg_winner = winner_player
-
-#saída
-print(f'''
-RESULTADO:
-{msg_winner}      
-jogador: {itens[op_player]}
-computador: {itens[op_cpu]}
-''')
