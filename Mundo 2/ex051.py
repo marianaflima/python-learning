@@ -5,16 +5,17 @@ dos 10 primeiros termos dessa progressão.
 
 a1 = int(input('Digite o 1º termo da P.A.: '))
 r = int(input('Digite a razão da P.A.: '))
+a10 = a1 + (10 - 1) * r
 s10 = 0
-ac = 0
 
-for c in range(1, 11):
-    ac = a1 + ((c - 1)*r)
-    s10 += ac
+for c in range(a1, a10 + r, r):
+    print(c, end =' --> ')
+    s10 += c
 
-s10 /= 2
+print(f'A soma dos termos da P.A. é: {s10 / 2}')
 
-print(s10)
+
+
 
 
     
