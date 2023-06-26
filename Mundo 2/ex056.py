@@ -10,23 +10,24 @@ nomes = []
 idades = []
 sexos = []
 mul_menos_20 = 0
-
+hom_mais_velho = ''
 
 for c in range(0, 4):
     nome = str(input('NOME: '))
     nomes.append(nome)
     idade = int(input('IDADE: '))
     idades.append(idade)
-    sexo = str(input('SEXO: ')).upper()
+    sexo = str(input('SEXO [M/F]: ')).upper()
     sexos.append(sexo)
     if sexo == 'F' and idade < 20:
         mul_menos_20 += 1
     elif sexo == 'M' and idade == max(idades):
-        hom_mais_velho = nome
+        hom_mais_velho = nome 
+    print('')
 
 print(f'''
 Média de idade: {sum(idades)/len(idades)}
 Homem mais velho: {hom_mais_velho}
-Nº de mulher de menor: {mul_menos_20}
+Nº de mulheres de menor: {mul_menos_20}
       ''')
 
