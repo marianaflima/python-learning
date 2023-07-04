@@ -6,18 +6,15 @@ quantos palpites foram necessários para vencer.
 from random import randint
 from time import sleep
 c = 0
-cpu = 0
-player = 1
 print('O COMPUTADOR PENSOU EM UM NÚMERO de 0 a 10!')
 print('Tente adivinhar!')
 
-while cpu != player:
+while True:
     c += 1
     cpu = randint(0, 10)
     player = int(input('Seu palpite (0 a 10): '))
     sleep(1.5)
     if cpu == player:
-        
         print(f'''
 Amém! Você acertou!
 CPU: {cpu}

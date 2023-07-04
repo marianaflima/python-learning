@@ -3,7 +3,6 @@ Refaça o desafio 51, lendo o primeiro termo e a razão de uma PA, mostrando os 
 primeiros termos da progressão usando a função while
 an = a1 + (n - 1) * r
 '''
-from time import sleep
 a1 = int(input('Primeiro termo da P.A.: '))
 r = int(input('Razão da P.A.: '))
 n = 1
